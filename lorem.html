@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lorem</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<style>
+		*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-color: #ebeced;
+}
+.title-txt{
+	text-align: center;
+	margin-top: 8%;
+	line-height: 1;
+	font-family: -webkit-pictograph;
+	letter-spacing: 3px;
+	color: #5c5c5c;
+	font-size: 30px;
+}
+.input-box{
+	margin-top: 4%;
+	margin-left: 38%;
+}
+.label{
+	font-size: 22px;
+	letter-spacing: 5px;
+	font-family: -webkit-pictograph;
+}
+.input-paragraphs{
+	width: 60px;
+	height: 30px;
+	font-size: 20px;
+	border-radius: 7px;
+	border:none;
+	letter-spacing: 3px;
+	padding-left: 2px;
+}
+.btn{
+	width: 120px;
+	height: 35px;
+	border-radius: 8px;
+	color: #000;
+	border:none;
+	background-color: #84aadb;
+	margin-left: 1%;
+	cursor: pointer;
+	transition: 0.8s;
+}
+.btn:hover{
+	background-color: #abd5ff;
+	color: #5caaf7;
+}
+.txt{
+	margin-top: 10%;
+	width: 60%;
+	margin-left: 20%;
+}
+.lorem-txt{
+	padding-top: 5%;
+	margin-top: 5%;
+}
+.err-text{
+	text-align: center;
+}
+.text-inner{
+	text-align: center;
+	letter-spacing: 2px;
+	padding-top:20px;
+	margin-top: 5%;
+	display: block;
+	font-family: system-ui;
+	font-size: 15px;
+}
+	</style>
+	<h2 class="title-txt">TIRED OF BORING LOREM IPSUM?</h2>
+	<div class="input-box">
+		<label class="label">Paragraphs:</label>
+		<input type="number" name="paragraphs" class="input-paragraphs" id="input">
+		<input type="submit" class="btn" value="GENERATE" id="btn">	
+	</div>
+	<div class="txt" id="txt"></div>
+	<script type="text/javascript">
+		let arrayLorem = [
+		"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<br><br>",
+		"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)<br><br>",
+		"Aenean bibendum et diam vitae tincidunt. Cras interdum ligula non velit gravida pharetra nec id quam. Vestibulum interdum ut dui ac mollis. Duis pharetra pulvinar ipsum non congue. Nulla eu orci quis lorem lobortis tincidunt blandit non nibh. Sed nec faucibus eros, sed dignissim sem. Quisque aliquet vel dui a molestie. Sed fringilla mauris vitae nunc dapibus eleifend.<br><br>",
+		"4TIRED OF BORING LOREM I4PSUM?Pellentesque convallis augue in posuere volutpat. Praesent massa nulla, sagittis lacinia ullamcorper eu, pharetra nec odio. Integer id orci tellus. Proin at suscipit est. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales egestas dapibus. Praesent quis mauris metus. Nam vehicula eget nibh ut bibendum. Vestibulum et nibh lobortis, pharetra risus nec, consequat sem. Donec ac gravida felis. Phasellus ut porttitor libero. Sed est tellus, hendrerit eget ex ac, accumsan ullamcorper lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br><br>",
+		"Nunc sit amet massa at dolor aliquet rhoncus sit amet id tellus. Suspendisse vitae pretium est, quis consectetur nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque bibendum mauris vitae volutpat interdum. Praesent vel diam placerat, bibendum enim ac, posuere ex. Nullam laoreet, nibh sed suscipit convallis, sem elit rutrum urna, id pulvinar sem lectus eget mi. Donec consequat dui dui, quis blandit erat dignissim pretium. Cras ultricies, quam ac aliquam dapibus, tellus tellus mattis dui, eget malesuada libero tortor at ipsum. Vestibulum efficitur elementum leo, at laoreet lorem condimentum quis. Donec lobortis blandit dolor, non dapibus felis euismod id. Pellentesque et nisl turpis. Nunc at tortor viverra, dictum elit vitae, consequat diam. Proin porta nisi augue, dignissim convallis libero rutrum nec. Nunc hendrerit luctus dolor, ac pretium ex viverra fringilla.<br><br>",
+		"Nulla facilisi. Donec eu lacus eu lorem finibus vulputate eget at diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce volutpat a velit id vehicula. Duis et rutrum ligula. Donec eget diam ac metus bibendum maximus ac ullamcorper ipsum. Sed ac nisi sit amet orci dictum ullamcorper. Aenean ornare porttitor eleifend. Nullam consectetur mi non nibh blandit pellentesque. Ut bibendum facilisis ultrices.<br><br>",
+		"Quisque in felis vitae nibh tempor fringilla. Praesent varius sem nec consequat molestie. Donec bibendum sem vitae velit sollicitudin, a lobortis elit tincidunt. Sed tincidunt commodo cursus. Etiam laoreet euismod ligula, nec vulputate mauris aliquet sed. Sed a mi est. Curabitur lobortis ante sit amet lacus ultrices, non dictum massa pharetra. Sed nunc magna, blandit at posuere in, porta quis sapien. Nulla facilisi. Donec porta enim non iaculis egestas. Quisque vitae nulla orci. Etiam vitae sem scelerisque, commodo nulla quis, elementum dolor. Quisque aliquet diam vitae varius pharetra. Donec mauris turpis, laoreet ac erat id, dictum fermentum erat. Sed neque quam, pharetra non accumsan sed, vulputate et est.<br><br>",
+		"Nulla facilisi. Donec eu lacus eu lorem finibus vulputate eget at diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce volutpat a velit id vehicula. Duis et rutrum ligula. Donec eget diam ac metus bibendum maximus ac ullamcorper ipsum. Sed ac nisi sit amet orci dictum ullamcorper. Aenean ornare porttitor eleifend. Nullam consectetur mi non nibh blandit pellentesque. Ut bibendum facilisis ultrices.<br><br>"];
+		let btn = document.getElementById('btn');
+		let input = document.getElementById('input');
+		let txt = document.getElementById('txt');
+		btn.onclick = function al() {
+		let num = parseInt(input.value);
+		let temp = arrayLorem.slice(0, num);
+		if(num < 1 || num > 9){
+			txt.innerHTML = `<p class="err-text">ERROR DEBILL</p>`;
+		}else{
+			txt.innerHTML = `<p class="text-inner">${temp}</p>`;
+			console.log(num);
+		}
+		}
+	</script>
+</body>
+</html>

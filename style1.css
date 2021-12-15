@@ -1,0 +1,118 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body{
+  background: #fff;
+}
+
+.date{
+  position: absolute;
+  bottom: 17px;
+  left: 7px;
+  color: #fff;
+}
+/*NEWS*/
+.one_news{
+  width: 63%;
+  max-height: 430px;
+  position: relative;
+  background: #000;
+}
+.wra{
+  cursor: pointer;
+}
+.con{
+  margin-left: 25%;
+  margin-top: 10%;
+}
+.artical-one-news{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 10%;
+  color: #fff;
+  font-family: Roboto;
+}
+.one_news h1{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 20%;
+  color: #fff;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 29px;
+  line-height: 37px;
+  z-index: 2;
+}
+.date-artical{
+	position: absolute;
+  width: 100%;
+  left: 0;
+	bottom: 5%;
+  color: #fff;
+  font-family: Roboto;
+}
+.img{
+  width: 100%;
+  max-height: 440px;
+  min-height: 420px;
+  background: #000;
+  opacity: 0.9;
+  background-size: 100% 100%;
+}
+.img:hover{
+  opacity: 0.8;
+}
+.min{
+  margin-top: 5%;
+  width: 67%;
+}
+.min_one_news{
+  width: 30%;
+  height: 200px;
+  min-height: 200px;
+  max-height: 200px;
+  margin-left: 1%;
+  display: inline-block;
+  text-align: center;
+  opacity: 0.9;
+  margin-bottom: 20px;
+  font-family:m_Brody,Cambria;
+  font-size: 22px;
+  background: #fff;
+  transition: 0.3s;
+  position: relative;
+}
+.box-min-news{
+  margin-top: 20px;
+
+}
+.min_one_news p{
+  padding: 0;
+  margin: 0;
+  min-height: 80px;
+  height: 80px;
+  text-align: center;
+  max-height: 80px; 
+  margin-bottom: 5px;
+  position: absolute;
+}
+.min_one_news:hover{
+  background: #e4e4e4;
+  cursor: pointer;
+  opacity: 1;
+  transform: 0.3s;
+  transition: 0.3s;
+  width: 30.4%;
+}
+.min_img{
+  width: 100%;
+  background-size: 100% 100%;
+  min-height: 110px;
+  max-height: 120px;
+}
